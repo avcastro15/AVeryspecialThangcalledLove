@@ -110,7 +110,7 @@
     .invite .formal{font-style:italic;font-size:1.2rem;color:var(--ink)}
 
     /* details */
-    .details{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line)}
+    .details{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line)}
     .detail{padding:46px 32px;text-align:center}
     .detail+.detail{border-left:1px solid var(--gold-line)}
     .detail .time{font-family:var(--serif);font-weight:300;font-size:2.6rem;color:var(--wine-deep);line-height:1.1;margin:14px 0 6px}
@@ -318,6 +318,40 @@
     .btn-line:hover{background:var(--wine);color:#fff}
     .cd span{color:#7A8494}
 
+    /* details timeline */
+    .timeline{max-width:640px;margin:0 auto;display:flex;flex-direction:column}
+    .tl-item{display:grid;grid-template-columns:110px 34px 1fr;align-items:center;gap:0 22px;padding:22px 0}
+    .tl-icon{color:var(--wine);display:flex;justify-content:center}
+    .tl-icon svg{width:76px;height:76px}
+    .tl-line{position:relative;align-self:stretch;display:flex;align-items:center;justify-content:center}
+    .tl-line::before{content:'';position:absolute;top:6px;bottom:6px;left:50%;width:1px;background:var(--gold-line)}
+    .tl-line span{position:relative;color:var(--gold);font-size:11px;background:var(--ivory);padding:4px 0;line-height:1}
+    .tl-time{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,2.6rem);line-height:1;color:var(--wine)}
+    .tl-text h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;color:var(--wine-deep);margin:6px 0 4px;line-height:1.15}
+    .tl-text p{margin:0;color:var(--ink);font-size:1.1rem;line-height:1.45}
+    .tl-text small{display:block;color:var(--muted);font-size:.92rem;font-style:italic;margin-top:4px}
+    .dress-line{text-align:center;margin:34px auto 0;color:var(--muted);font-style:italic}
+    .dress-line .eyebrow{display:block;font-style:normal;margin-bottom:6px}
+    .dress-line a{color:var(--wine)}
+    @media (max-width:560px){.tl-item{grid-template-columns:64px 22px 1fr;gap:0 14px}.tl-icon svg{width:52px;height:52px}.tl-text h3{font-size:1.35rem}}
+
+    /* little ones with illustrations */
+    .kids{display:grid;gap:18px 14px;justify-content:center;margin:10px auto 0}
+    .kids-3{grid-template-columns:repeat(3,minmax(0,200px))}
+    .kids-5{grid-template-columns:repeat(5,minmax(0,160px))}
+    .kid{margin:0;text-align:center;position:relative}
+    .kids-3 .kid+.kid::before{content:'';position:absolute;left:-8px;top:8%;height:84%;width:1px;background:var(--gold-line)}
+    .kid img{width:100%;height:auto;display:block;-webkit-mask-image:radial-gradient(ellipse 72% 80% at 50% 48%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 80% at 50% 48%,#000 62%,transparent 100%)}
+    .kids-3 .kid img{aspect-ratio:200/420;object-fit:cover}
+    .kids-5 .kid img{aspect-ratio:3/5;object-fit:cover}
+    .kid figcaption{display:block;margin-top:0;font-style:normal;color:inherit;font-size:inherit}
+    .kid-role{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--wine);line-height:1.15;margin-top:6px}
+    .kid-name{font-size:1.08rem;color:var(--ink);line-height:1.3;margin-top:2px}
+    .kids-5 .kid-name{font-size:1rem}
+    .kid-sign{text-align:center;margin-top:22px}
+    .kids-title{font-family:var(--serif);font-weight:500;font-style:normal;font-size:1.8rem;color:var(--wine);margin:6px 0 4px;text-align:center}
+    @media (max-width:700px){.kids-5{display:flex;flex-wrap:wrap;justify-content:center}.kids-5 .kid{width:calc((100% - 28px) / 3)}.kids-3{grid-template-columns:repeat(3,minmax(0,1fr))}.kid-role{font-size:1.05rem}.kid-name{font-size:.92rem}}
+
     /* footer */
     footer{text-align:center;padding:90px 20px 70px;background:var(--wine-deep);color:#efe3d3}
     footer .script{font-size:4.4rem;color:#fff}
@@ -487,32 +521,42 @@
       <div class="wrap">
         <div class="head reveal">
           <div class="eyebrow">The celebration</div>
-          <h2 class="title">A day to <em>remember</em></h2>
+          <h2 class="title">The <em>details</em></h2>
           <p class="lede">Everything you need for the day, from the ceremony to the last dance.</p>
         </div>
-        <div class="details reveal">
-          <div class="detail">
-            <div class="eyebrow">Ceremony</div>
-            <div class="time">4:00 PM</div>
-            <h3>Santuario de San Jose Parish</h3>
-            <p>Buffalo cor. Duke Streets,<br>East Greenhills, Mandaluyong</p>
+        <div class="timeline reveal">
+          <div class="tl-item">
+            <div class="tl-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M32 4v10M28 8h8"/><path d="M22 26l10-10 10 10"/><path d="M24 24v30M40 24v30"/><path d="M8 54V38l16-10M56 54V38L40 28"/><path d="M4 56h56"/><circle cx="32" cy="31" r="2.5"/><path d="M28 54V44a4 4 0 0 1 8 0v10"/><path d="M13 50v-6a2 2 0 0 1 4 0v6M47 50v-6a2 2 0 0 1 4 0v6"/></svg></div>
+            <div class="tl-line" aria-hidden="true"><span>◆</span></div>
+            <div class="tl-text">
+              <div class="tl-time">4:00 PM</div>
+              <h3>Church Ceremony</h3>
+              <p>Santuario de San Jose Parish<br>(Archdiocese of Manila)<br><small>Buffalo cor. Duke Streets, East Greenhills, Mandaluyong</small></p>
+            </div>
           </div>
-          <div class="detail">
-            <div class="eyebrow">Reception</div>
-            <div class="time">5:00 PM</div>
-            <h3>The Clubhouse at Third Greenmeadows</h3>
-            <p>14 Giraffe Street, Ugong Norte,<br>Quezon City</p>
+          <div class="tl-item">
+            <div class="tl-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M10 14h44L32 36z"/><path d="M15 19h34"/><path d="M32 36v18M22 56h20"/><path d="M37 22l12-14"/><circle cx="40" cy="19" r="3"/><circle cx="35" cy="25" r="3"/></svg></div>
+            <div class="tl-line" aria-hidden="true"><span>◆</span></div>
+            <div class="tl-text">
+              <div class="tl-time">6:00 PM</div>
+              <h3>Cocktail Hour</h3>
+              <p>The Clubhouse at Third Greenmeadows<br><small>14 Giraffe Street, Ugong Norte, Quezon City</small></p>
+            </div>
           </div>
-          <div class="detail">
-            <div class="eyebrow">Dress code</div>
-            <div class="time">Smart casual</div>
-            <h3>In muted green tones</h3>
-            <p>See the <a href="#attire" style="color:var(--wine)">attire guide</a> for our approved palette.</p>
+          <div class="tl-item">
+            <div class="tl-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="34" r="14"/><circle cx="32" cy="34" r="10"/><path d="M8 14v12a3 3 0 0 0 6 0V14M11 14v40"/><path d="M56 14c-5 3-6 12-6 18h6v22"/></svg></div>
+            <div class="tl-line" aria-hidden="true"><span>◆</span></div>
+            <div class="tl-text">
+              <div class="tl-time">7:00 PM</div>
+              <h3>Reception Program</h3>
+              <p>The Clubhouse at Third Greenmeadows</p>
+            </div>
           </div>
         </div>
+        <p class="dress-line reveal"><span class="eyebrow">Dress code</span> Smart casual in muted green tones · see the <a href="#attire">attire guide</a></p>
         <div class="note reveal">
           <div class="eyebrow">Garden welcome</div>
-          <p>Settle in, mingle, and enjoy the garden during cocktail hour. Try your luck at the claw machines and take home a little prize. The mobile bar offers <em>unlimited drinks</em> — kindly keep your glass for refills.</p>
+          <p>Settle in, mingle, and enjoy the garden during cocktail hour before the reception program begins at 7:00 PM. Try your luck at the claw machines and take home a little prize. The mobile bar offers <em>unlimited drinks</em> — kindly keep your glass for refills.</p>
         </div>
       </div>
     </section>
@@ -578,13 +622,24 @@
               <div><h4>Candle</h4><ul class="names"><li>John Adriann Tongol</li><li>Loreign Cathleen Cabigting</li></ul></div>
               <div><h4>Veil</h4><ul class="names"><li>Adrian Lio Castro</li><li>Abigail Castro</li></ul></div>
               <div><h4>Cord</h4><ul class="names"><li>Emmanuel Dabu</li><li>Kristel Dabu</li></ul></div>
+            <div style="grid-column:1/-1;text-align:center;margin-top:8px"><h4>Here Comes the Bride</h4><ul class="names"><li>Aerol John Castro</li></ul></div>
             </div>
           </div>
           <div class="group" id="ent-little">
             <h3>Little Ones</h3>
-            <div class="pair" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
-              <div><h4>Flower Girls</h4><ul class="names"><li>Audrey Gaebrielle Castro</li><li>Allison Scarlette Castro</li><li>Yeesheen Xyriel Tongol</li><li>Gabriella Alicxzia Adriano</li><li>Raphaela Xyra Nolasco</li></ul></div>
-              <div><h4>Ring Bearer</h4><ul class="names"><li>Junlord Joncelath Tongol</li></ul><h4 style="margin-top:22px">Coin Bearer</h4><ul class="names"><li>Paul Renzo Garcia</li></ul><h4 style="margin-top:22px">Bible Bearer</h4><ul class="names"><li>Izaak Mateus Suba</li></ul><h4 style="margin-top:22px">Here Comes the Bride</h4><ul class="names"><li>Aerol John Castro</li></ul></div>
+            <div class="kids kids-3">
+                <figure class="kid"><figcaption><div class="kid-role">Ring Bearer</div><div class="kid-name">Junlord Joncelath Tongol</div></figcaption></figure>
+                <figure class="kid"><figcaption><div class="kid-role">Coin Bearer</div><div class="kid-name">Paul Renzo Garcia</div></figcaption></figure>
+                <figure class="kid"><figcaption><div class="kid-role">Bible Bearer</div><div class="kid-name">Izaak Mateus Suba</div></figcaption></figure>
+            </div>
+            <div class="orn" aria-hidden="true"><svg viewBox="0 0 46 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 7h14M31 7h14"/><path d="M23 1.5l4.5 5.5-4.5 5.5-4.5-5.5z"/></svg></div>
+            <h4 class="kids-title">Flower Girls</h4>
+            <div class="kids kids-5">
+                <figure class="kid"><figcaption><div class="kid-name">Audrey Gaebrielle Castro</div></figcaption></figure>
+                <figure class="kid"><figcaption><div class="kid-name">Allison Scarlette Castro</div></figcaption></figure>
+                <figure class="kid"><figcaption><div class="kid-name">Yeesheen Xyriel Tongol</div></figcaption></figure>
+                <figure class="kid"><figcaption><div class="kid-name">Gabriella Alicxzia Adriano</div></figcaption></figure>
+                <figure class="kid"><figcaption><div class="kid-name">Raphaela Xyra Nolasco</div></figcaption></figure>
             </div>
           </div>
         </div>
@@ -674,7 +729,7 @@
               <div class="eyebrow">The reception</div>
               <h3>The Clubhouse at Third Greenmeadows</h3>
               <p>14 Giraffe Street, Ugong Norte, Quezon City</p>
-              <p class="time">5:00 in the evening onwards</p>
+              <p class="time">Cocktail hour at 6:00 · Program at 7:00 in the evening</p>
               <div class="row">
                 <a href="https://maps.app.goo.gl/JfvW7Kqj733fgnt89" target="_blank" rel="noopener" class="btn btn-wine">Open in Google Maps</a>
                 <div class="qr"><img src="images/reception_qr.png" alt="QR code for directions to the reception" loading="lazy">Scan for<br>the reception</div>
